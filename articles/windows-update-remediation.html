@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Windows Update Remediation with PowerShell | Endpoint Engineers</title>
+
+<meta name="description"
+      content="Learn how to detect and remediate common Windows Update issues using PowerShell and Microsoft Intune Remediations.">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Endpoint Engineers</h1>
+
+<p>Automate. Secure. Monitor. Remediate.</p>
+
+</header>
+
+<nav>
+
+<a href="../index.html">Home</a>
+<a href="#">Intune</a>
+<a href="#">Autopilot</a>
+<a href="#">Nexthink</a>
+<a href="#">Tanium</a>
+<a href="#">Automation</a>
+<a href="#">AI</a>
+
+</nav>
+
+<main class="article">
+
+<p class="category">INTUNE • POWERSHELL • WINDOWS UPDATE</p>
+
+<h1>
+Windows Update Remediation with PowerShell + Intune
+</h1>
+
+<p class="date">
+Published: August 31, 2026
+</p>
+
+<p class="intro">
+
+Windows Update failures are one of the most common endpoint
+management problems in enterprise environments.
+
+Instead of manually troubleshooting every device, we can use
+PowerShell and Microsoft Intune Remediations to automatically
+detect and resolve common Windows Update issues.
+
+</p>
+
+<h2>What does this solution do?</h2>
+
+<ul>
+
+<li>Checks Windows Update services</li>
+
+<li>Checks BITS</li>
+
+<li>Checks Cryptographic Services</li>
+
+<li>Resets Windows Update cache</li>
+
+<li>Resets Catroot2</li>
+
+<li>Restarts required services</li>
+
+<li>Triggers a Windows Update scan</li>
+
+<li>Creates a local remediation log</li>
+
+</ul>
+
+<h2>Architecture</h2>
+
+<div class="workflow">
+
+Detection Script
+→
+Problem Found
+→
+Remediation Script
+→
+Service Repair
+→
+Cache Reset
+→
+Windows Update Scan
+→
+Verification
+
+</div>
+
+<h2>Step 1 — Detection Script</h2>
+
+<p>
+Download the detection script from the Endpoint Engineers GitHub repository.
+</p>
+
+<a class="download"
+   href="../scripts/windows-update-remediation/Detection.ps1">
+
+Download Detection.ps1
+
+</a>
+
+<h2>Step 2 — Remediation Script</h2>
+
+<p>
+The remediation script performs the required Windows Update repairs.
+</p>
+
+<a class="download"
+   href="../scripts/windows-update-remediation/Remediation.ps1">
+
+Download Remediation.ps1
+
+</a>
+
+<h2>Step 3 — Configure Microsoft Intune</h2>
+
+<p>
+
+Open Microsoft Intune and navigate to:
+
+</p>
+
+<pre>
+Devices
+→ Windows
+→ Remediations
+→ Create
+</pre>
+
+<p>
+
+Upload:
+
+</p>
+
+<pre>
+Detection.ps1
+Remediation.ps1
+</pre>
+
+<h2>Recommended Settings</h2>
+
+<table>
+
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+
+<tr>
+<td>Run this script using logged-on credentials</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>Enforce script signature check</td>
+<td>No*</td>
+</tr>
+
+<tr>
+<td>Run script in 64-bit PowerShell</td>
+<td>Yes</td>
+</tr>
+
+</table>
+
+<p class="note">
+
+*Follow your organization's PowerShell signing policy.
+
+</p>
+
+<h2>Logging</h2>
+
+<p>
+
+The remediation script writes logs to:
+
+</p>
+
+<pre>
+C:\ProgramData\EndpointEngineers\WindowsUpdate\
+</pre>
+
+<h2>Important</h2>
+
+<p>
+
+Always test remediation scripts with a pilot device group before
+deploying them across production endpoints.
+
+</p>
+
+<h2>Download the complete solution</h2>
+
+<a class="download"
+   href="../scripts/windows-update-remediation/">
+
+View Windows Update Remediation Toolkit
+
+</a>
+
+</main>
+
+<footer>
+
+<p>
+© 2026 Endpoint Engineers
+</p>
+
+<p>
+Automate. Secure. Monitor. Remediate.
+</p>
+
+</footer>
+
+</body>
+
+</html>
