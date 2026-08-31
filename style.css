@@ -47,3 +47,89 @@ button{
   margin:20px 0;
   border-radius:12px;
 }
+.article {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 25px;
+}
+
+.article h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.article h2 {
+    margin-top: 45px;
+    color: #00c8ff;
+}
+
+.category {
+    color: #00c8ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.date {
+    color: #9aa8b8;
+}
+
+.intro {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.article li {
+    margin: 12px 0;
+}
+
+.workflow {
+    background: #10233a;
+    padding: 25px;
+    border-radius: 10px;
+    line-height: 2;
+    text-align: center;
+}
+
+pre {
+    background: #050d16;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.download {
+    display: inline-block;
+    background: #00c8ff;
+    color: #081421;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #29415c;
+    text-align: left;
+}
+
+th {
+    background: #10233a;
+}
+
+.note {
+    color: #9aa8b8;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #050d16;
+}
